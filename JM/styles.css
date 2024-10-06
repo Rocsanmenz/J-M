@@ -1,0 +1,325 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Junge', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #cc6600;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar h1 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.and-symbol {
+    color: #ffd700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 1.1em;
+}
+
+.nav-links li a:hover {
+    color: #ffd700;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+/* Contenido del encabezado */
+.header-content {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #cc6600;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    color: #777;
+}
+
+/* Sección sobre nosotros */
+.about-section {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 2px solid #cc6600;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    color: #cc6600;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Sección de contacto */
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    color: #cc6600;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.contact-section a {
+    color: #cc6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+    color: #ff8c00;
+}
+
+/* Pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .header-content {
+        padding: 30px 20px;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .contact-section {
+        padding: 30px 20px;
+    }
+}
+.logo {
+    width: 100px;  /* Ajusta este valor según el tamaño que desees */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    max-height: 80px; /* Opcional: para limitar la altura máxima */
+    margin-right: 10px;  /* Espacio entre el logo y el texto del título */
+    vertical-align: middle;  /* Alineación con el texto */
+}
+/* Ajuste del texto "J&M" */
+.jm-container {
+    display: inline-flex;
+    align-items: baseline; /* Alinea los elementos en su línea base */
+}
+
+.j-symbol, .m-symbol {
+    font-size: 1.5em;  /* Asegúrate de que el tamaño sea consistente */
+    color: #333;  /* Color estándar para las letras */
+    font-family: 'Junge', serif;  /* Asegura que la fuente sea consistente */
+}
+
+.and-symbol {
+    font-size: 1.5em;  /* Ajusta el tamaño del símbolo para que esté alineado con el resto */
+    color: #ffd700;  /* Color dorado para que se destaque */
+    margin: 0 3px;  /* Añade algo de espacio alrededor del símbolo & */
+    font-family: Arial, sans-serif;  /* Cambia la fuente a Arial para un símbolo & más clásico */
+    vertical-align: baseline;  /* Alineación vertical para estar alineado con las letras */
+}
+.location-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.maps-box {
+    display: inline-block;
+    background-color: #cc6600;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.maps-box a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.maps-box i {
+    font-size: 2em;
+}
+
+.maps-box span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.maps-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+footer .j-symbol,
+footer .and-symbol,
+footer .m-symbol {
+    color: #fff;  /* Cambia el color a blanco para que sea visible en el fondo oscuro del footer */
+}
+.gallery-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.gallery-section h2 {
+    font-size: 2.5em;
+    color: #cc6600;
+    margin-bottom: 30px;
+}
+
+.gallery-item .card {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.gallery-item .card-image img {
+    width: 100%;
+    height: 300px; /* Ajustar la altura para una apariencia consistente */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Asegurar que todas las tarjetas tengan la misma altura */
+.equal-height {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Alinear la imagen y el contenido */
+.card-image {
+    flex-grow: 1;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Añadir un margen adecuado para las filas */
+.row {
+    margin-bottom: 30px;
+}
+
+/* Mejorar la apariencia de las tarjetas */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto; /* Mantener la altura automática */
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}

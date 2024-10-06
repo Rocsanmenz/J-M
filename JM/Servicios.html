@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Montacargas y Apiladores J&M</title>
+    <!-- Incluir Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Incluir FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Incluir Fuente Personalizada -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Junge&display=swap">
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="orange darken-3">
+                <div class="nav-wrapper container">
+                    <a href="#" class="brand-logo">
+                        <img src="src/Imagenes/opcion2logo.png" alt="Logo de Montacargas y Apiladores J&M" class="logo" style="height: 60px; margin-top: 5px;">
+                    </a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <ul class="right hide-on-med-and-down nav-links">
+                        <li><a href="Codigo.html">Inicio</a></li>
+                        <li><a href="mision.html">Visión y Misión</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="contacto.html">Contáctanos</a></li>
+                        <!-- Agregar el enlace a Facebook -->
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Sidenav para móviles -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="Codigo.html">Inicio</a></li>
+            <li><a href="mision.html">Visión y Misión</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contáctanos</a></li>
+            <!-- Agregar el enlace a Facebook -->
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="header-content center-align">
+        <h1>Alquiler de Montacargas y Apiladores J<span class="and-symbol">&</span>M</h1>
+        <p>Expertos en apiladores y montacargas de calidad</p>
+    </div>
+
+    <main>
+        <!-- Sección "Servicios" -->
+        <section class="about-section container">
+            <h2 class="center-align orange-text text-darken-3">Nuestros Servicios</h2>
+            <div class="row">
+                <!-- Tarjeta 1 -->
+                <div class="col s12 m6 l4">
+                    <div class="card hoverable equal-height">
+                        <div class="card-image">
+                            <img src="src/Imagenes/Venta.jpeg" alt="Servicio 1">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Renta de Montacargas</span>
+                            <p>Ofrecemos renta de montacargas de alta calidad para satisfacer las necesidades de tu negocio.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="col s12 m6 l4">
+                    <div class="card hoverable equal-height">
+                        <div class="card-image">
+                            <img src="src/Imagenes/Reparacion.jpeg" alt="Servicio 2">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Mantenimiento de Equipos</span>
+                            <p>Proporcionamos mantenimiento completo para mantener tus equipos en óptimas condiciones.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="col s12 m6 l4">
+                    <div class="card hoverable equal-height">
+                        <div class="card-image">
+                            <img src="src/Imagenes/mantenimiento.jpeg" alt="Servicio 3">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Venta de Apiladores</span>
+                            <p>Ofrecemos apiladores de la más alta calidad, adecuados para diferentes industrias y calidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer orange darken-3">
+        <div class="container">
+            <div class="center-align">
+                <p>&copy; 2024 Montacargas y Apiladores <span class="and-symbol">&</span>M. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Incluir JavaScript de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit(); // Inicializar todos los componentes de Materialize
+        });
+    </script>
+</body>
+
+</html>
