@@ -32,9 +32,11 @@
                         <li><a href="Mision.html">Visión y Misión</a></li>
                         <li><a href="Servicios.html">Servicios</a></li>
                         <li><a href="Contacto.html">Contáctanos</a></li>
-                        <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook-f fa-lg"></i>
-                        </a>
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -46,9 +48,11 @@
             <li><a href="Mision.html">Visión y Misión</a></li>
             <li><a href="Servicios.html">Servicios</a></li>
             <li><a href="Contacto.html">Contáctanos</a></li>
-            <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=61557299182372" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
         </ul>
     </header>
 
@@ -74,40 +78,51 @@
             <p class="center-align">Estamos aquí para ayudarte y atender cualquier consulta que tengas.</p>
         </section>
 
-            <!-- Sección "Contáctanos" -->
-            <section id="contact" class="contact-section container">
-                <h2 class="center-align orange-text text-darken-3">Envíanos un mensaje</h2>
+        <section id="contact" class="contact-section container">
+            <h2 class="center-align title">Envíanos un mensaje</h2>
+            <form id="contact-form" class="row">
+                <div class="input-field col s12 m6">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Nombre</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input type="tel" id="phone" name="phone" required placeholder=" ">
+                    <label for="phone">Teléfono</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <input type="email" id="email" name="email" required placeholder=" ">
+                    <label for="email">Correo Electrónico</label>
+                </div>
+                <div class="input-field col s12 m6">
+                    <label for="product"></label>
+                    <select id="product" name="product" required>
+                        <option value="" disabled selected> Productos de interés</option>
+                        <option value="renta">Renta</option>
+                        <option value="compra_repuestos">Compra de Repuestos</option>
+                        <option value="mantenimiento">Mantenimiento</option>
+                    </select>
+                </div>
+                <div class="input-field col s6">
+                    <label for="message">Descripción</label>
+    
+                    <textarea id="message" name="message" class="materialize-textarea" required placeholder=" "></textarea>
                 
-                <form id="contact-form">
-                    <div class="input-field">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Nombre*</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="tel" id="phone" name="phone" required>
-                        <label for="phone">Teléfono*</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Correo Electrónico*</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="product" name="product">
-                        <label for="product">Producto de interés</label>
-                    </div>
-                    <div class="input-field">
-                        <textarea id="message" name="message" class="materialize-textarea" required></textarea>
-                        <label for="message">Mensaje*</label>
-                    </div>
-                    <button type="submit" class="btn orange darken-3">ENVIAR MENSAJE</button>
-                </form>
-            </section>
+                </div>
+                <div class="col s12 ">
+                    <button type="submit" class="custom-button">ENVIAR MENSAJE</button>
+    
+                </div>
+            </form>
+        </section>
+        
+            
     </main>
-       <!-- Botón flotante de WhatsApp -->
-      <!-- Botón flotante de WhatsApp -->
-      <a href="https://wa.me/+50661083592" class="whatsapp-float" target="_blank">
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/+50661083592" class="whatsapp-float" target="_blank">
         <img src="src/Imagenes/whatsapp-removebg-preview.png" alt="WhatsApp" />
     </a>
+
     <!-- Footer -->
     <footer class="page-footer orange darken-3">
         <div class="container">
@@ -117,8 +132,55 @@
         </div>
     </footer>
 
-    <style>
-        .whatsapp-float {
+    <!-- Incluir JavaScript de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit(); // Inicializar todos los componentes de Materialize
+        });
+    </script>
+
+    <!-- Incluir JavaScript de Email.js -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("8QYwqSteOsPWv-SgS"); // Reemplaza con tu User ID de Email.js
+        })();
+    </script>
+
+    <!-- Script para enviar el formulario -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+            // Obtener valores del formulario
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const product = document.getElementById('product').value;
+            const message = document.getElementById('message').value;
+
+            // Enviar el correo usando Email.js
+            emailjs.send("service_uuck0c2", "template_z8z5yuc", {
+                name: name,
+                phone: phone,
+                email: email,
+                product: product,
+                message: message
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Mensaje enviado con éxito');
+                document.getElementById('contact-form').reset(); // Resetear el formulario
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+            });
+        });
+    </script>
+
+<style>
+      .whatsapp-float {
       position: fixed;
       bottom: 20px; /* Espacio desde la parte inferior */
       right: 20px; /* Espacio desde el lado derecho */
@@ -137,108 +199,134 @@
       width: 30px; /* Ancho del icono de WhatsApp */
       height: 30px; /* Altura del icono de WhatsApp */
   }
-  
 
-     /* Estilos para los campos de entrada */
-.input-field input,
-.input-field textarea {
-    border: 2px solid #FF5722; /* Borde del campo */
-    border-radius: 8px; /* Bordes más redondeados */
-    padding: 12px; /* Espaciado interno */
+/* Estilo general del formulario */
+.contact-section {
+    padding: 30px; /* Espaciado interno */
     background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Título del formulario */
+.title {
+    font-size: 24px; /* Tamaño del título */
     color: #333; /* Color del texto */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+
+        /* Estilo general del formulario */
+        .contact-section {
+            padding: 30px; /* Espaciado interno */
+            background-color: #ffffff; /* Color de fondo blanco */
+            border-radius: 12px; /* Bordes redondeados */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            margin-top: 20px; /* Espacio superior */
+        }
+
+        /* Título del formulario */
+        .title {
+            font-size: 24px; /* Tamaño del título */
+            color: #FF5722; /* Color del texto */
+            margin-bottom: 20px; /* Espacio inferior */
+        }
+
+        /* Estilo para los campos de entrada */
+        .input-field {
+            position: relative; /* Necesario para la etiqueta flotante */
+            margin-bottom: 20px; /* Espacio entre campos */
+        }
+
+        .input-field input,
+        .input-field textarea,
+        .input-field select {
+            border: 2px solid #FF5722; /* Borde del campo */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px; /* Espaciado interno */
+            background-color: #f7f7f7; /* Color de fondo del campo */
+            color: #333; /* Color del texto */
+            font-size: 16px; /* Tamaño de fuente */
+            width: 100%; /* Ancho completo */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+        }
+
+        /* Estilo para textarea */
+        .input-field textarea {
+            resize: none; /* Deshabilitar el cambio de tamaño manual */
+            min-height: 100px; /* Asegurarse de que el área de texto sea más alta */
+        }
+
+        /* Placeholder */
+        .input-field input::placeholder,
+        .input-field textarea::placeholder {
+            color: transparent; /* Hacer el placeholder invisible */
+        }
+
+        /* Estilo para las etiquetas */
+        .input-field label {
+            color: #666; /* Color de la etiqueta */
+            font-size: 14px; /* Tamaño de fuente de la etiqueta */
+            position: absolute; /* Posición absoluta para movimiento flotante */
+            left: 15px; /* Espacio desde la izquierda */
+            top: 15px; /* Espacio desde la parte superior */
+            transition: 0.2s ease; /* Transición suave */
+            pointer-events: none; /* No interferir con los clics */
+        }
+
+        /* Mostrar etiquetas flotantes */
+        .input-field input:focus + label,
+        .input-field textarea:focus + label,
+        .input-field select:focus + label,
+        .input-field input:not(:placeholder-shown) + label,
+        .input-field textarea:not(:placeholder-shown) + label {
+            transform: translateY(-25px); /* Mover la etiqueta hacia arriba */
+            font-size: 12px; /* Tamaño de fuente de la etiqueta flotante */
+            color: #FF5722; /* Color de la etiqueta flotante */
+        }
+
+        /* Estilo al enfocar los campos */
+        .input-field input:focus,
+        .input-field textarea:focus,
+        .input-field select:focus {
+            border-color: #FF5722; /* Cambiar el color del borde al enfocar */
+            box-shadow: 0 0 5px rgba(255, 87, 34, 0.25); /* Sombra más fuerte al enfocar */
+        }
+/* Estilo para el botón de envío */
+.custom-button {
+    background-color: #FF5722; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px 25px; /* Espaciado interno */
     font-size: 16px; /* Tamaño de fuente */
-    min-height: 60px; /* Altura mínima para el campo de mensaje */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de profundidad */
+    font-weight: bold; /* Hacer que el texto sea más fuerte */
+    text-align: center; /* Centrar texto */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves */
+    width: 100%; /* Ancho completo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
 }
 
-/* Estilo para textarea */
-.input-field textarea {
-    resize: none; /* Deshabilitar el cambio de tamaño manual */
+/* Efecto al pasar el mouse sobre el botón */
+.custom-button:hover {
+    background-color: #e64a19; /* Cambiar el color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Elevar ligeramente el botón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumentar la sombra al pasar el mouse */
 }
 
-/* Etiquetas flotantes */
-.input-field label {
-    color: #666; /* Color de la etiqueta */
-    position: absolute; /* Posición absoluta para movimiento flotante */
-    left: 15px; /* Espacio desde la izquierda */
-    top: 10px; /* Espacio desde la parte superior */
-    transition: 0.2s ease; /* Transición suave */
-    pointer-events: none; /* No interferir con los clics */
-}
+/* Efecto al hacer clic en el botón */
+.custom-button:active {
+    transform: translateY(0); /* Sin efecto al hacer clic */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.
 
-/* Mostrar etiquetas flotantes siempre */
-.input-field input + label,
-.input-field textarea + label {
-    transform: translateY(-25px); /* Mover la etiqueta hacia arriba */
-    font-size: 12px; /* Tamaño de fuente de la etiqueta flotante */
-    color: #FF5722; /* Color de la etiqueta flotante */
-}
 
-/* Estilo al enfocar los campos */
-.input-field input:focus,
-.input-field textarea:focus {
-    border-color: #FF5722; /* Cambiar el color del borde al enfocar */
-    box-shadow: 0 0 5px rgba(255, 87, 34, 0.25); /* Sombra más fuerte al enfocar */
-}
+    </style>
 
-/* Cambiar color de etiqueta al enfocar */
-.input-field input:focus + label,
-.input-field textarea:focus + label {
-    color: #FF5722; /* Color de la etiqueta al enfocar */
-}
-
-      
-      
 </style>
 
-    <!-- Incluir JavaScript de Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            M.AutoInit(); // Inicializar todos los componentes de Materialize
-        });
-    </script>
-
-     <!-- Incluir JavaScript de Email.js -->
-     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-     <script>
-         (function() {
-             emailjs.init("8QYwqSteOsPWv-SgS"); // Reemplaza con tu User ID de Email.js
-         })();
-     </script>
-     
-     <!-- Script para enviar el formulario -->
-     <script>
-         document.getElementById('contact-form').addEventListener('submit', function(event) {
-             event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
- 
-             // Obtener valores del formulario
-             const name = document.getElementById('name').value;
-             const phone = document.getElementById('phone').value;
-             const email = document.getElementById('email').value;
-             const product = document.getElementById('product').value;
-             const message = document.getElementById('message').value;
- 
-             // Enviar el correo usando Email.js
-             emailjs.send("service_uuck0c2", "template_z8z5yuc", {
-                 name: name,
-                 phone: phone,
-                 email: email,
-                 product: product,
-                 message: message
-             })
-             .then(function(response) {
-                 console.log('SUCCESS!', response.status, response.text);
-                 alert('Mensaje enviado con éxito');
-                 document.getElementById('contact-form').reset(); // Resetear el formulario
-             }, function(error) {
-                 console.log('FAILED...', error);
-                 alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
-             });
-         });
-     </script>
 </body>
 
 </html>
