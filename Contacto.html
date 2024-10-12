@@ -73,8 +73,41 @@
             </div>
             <p class="center-align">Estamos aquí para ayudarte y atender cualquier consulta que tengas.</p>
         </section>
-    </main>
 
+            <!-- Sección "Contáctanos" -->
+            <section id="contact" class="contact-section container">
+                <h2 class="center-align orange-text text-darken-3">Envíanos un mensaje</h2>
+                
+                <form id="contact-form">
+                    <div class="input-field">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nombre*</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone">Teléfono*</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Correo Electrónico*</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="product" name="product">
+                        <label for="product">Producto de interés</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea id="message" name="message" class="materialize-textarea" required></textarea>
+                        <label for="message">Mensaje*</label>
+                    </div>
+                    <button type="submit" class="btn orange darken-3">ENVIAR MENSAJE</button>
+                </form>
+            </section>
+    </main>
+       <!-- Botón flotante de WhatsApp -->
+      <!-- Botón flotante de WhatsApp -->
+      <a href="https://wa.me/+50661083592" class="whatsapp-float" target="_blank">
+        <img src="src/Imagenes/whatsapp-removebg-preview.png" alt="WhatsApp" />
+    </a>
     <!-- Footer -->
     <footer class="page-footer orange darken-3">
         <div class="container">
@@ -84,6 +117,82 @@
         </div>
     </footer>
 
+    <style>
+        .whatsapp-float {
+      position: fixed;
+      bottom: 20px; /* Espacio desde la parte inferior */
+      right: 20px; /* Espacio desde el lado derecho */
+      width: 60px; /* Ancho del botón */
+      height: 60px; /* Altura del botón */
+      background-color: #ffff; /* Color de fondo de WhatsApp */
+      border-radius: 50%; /* Bordes redondeados */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+      display: flex; /* Alinear el contenido al centro */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  }
+  
+  .whatsapp-float img {
+      width: 30px; /* Ancho del icono de WhatsApp */
+      height: 30px; /* Altura del icono de WhatsApp */
+  }
+  
+
+     /* Estilos para los campos de entrada */
+.input-field input,
+.input-field textarea {
+    border: 2px solid #FF5722; /* Borde del campo */
+    border-radius: 8px; /* Bordes más redondeados */
+    padding: 12px; /* Espaciado interno */
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #333; /* Color del texto */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    font-size: 16px; /* Tamaño de fuente */
+    min-height: 60px; /* Altura mínima para el campo de mensaje */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de profundidad */
+}
+
+/* Estilo para textarea */
+.input-field textarea {
+    resize: none; /* Deshabilitar el cambio de tamaño manual */
+}
+
+/* Etiquetas flotantes */
+.input-field label {
+    color: #666; /* Color de la etiqueta */
+    position: absolute; /* Posición absoluta para movimiento flotante */
+    left: 15px; /* Espacio desde la izquierda */
+    top: 10px; /* Espacio desde la parte superior */
+    transition: 0.2s ease; /* Transición suave */
+    pointer-events: none; /* No interferir con los clics */
+}
+
+/* Mostrar etiquetas flotantes siempre */
+.input-field input + label,
+.input-field textarea + label {
+    transform: translateY(-25px); /* Mover la etiqueta hacia arriba */
+    font-size: 12px; /* Tamaño de fuente de la etiqueta flotante */
+    color: #FF5722; /* Color de la etiqueta flotante */
+}
+
+/* Estilo al enfocar los campos */
+.input-field input:focus,
+.input-field textarea:focus {
+    border-color: #FF5722; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.25); /* Sombra más fuerte al enfocar */
+}
+
+/* Cambiar color de etiqueta al enfocar */
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+    color: #FF5722; /* Color de la etiqueta al enfocar */
+}
+
+      
+      
+</style>
+
     <!-- Incluir JavaScript de Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -91,6 +200,45 @@
             M.AutoInit(); // Inicializar todos los componentes de Materialize
         });
     </script>
+
+     <!-- Incluir JavaScript de Email.js -->
+     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+     <script>
+         (function() {
+             emailjs.init("8QYwqSteOsPWv-SgS"); // Reemplaza con tu User ID de Email.js
+         })();
+     </script>
+     
+     <!-- Script para enviar el formulario -->
+     <script>
+         document.getElementById('contact-form').addEventListener('submit', function(event) {
+             event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+ 
+             // Obtener valores del formulario
+             const name = document.getElementById('name').value;
+             const phone = document.getElementById('phone').value;
+             const email = document.getElementById('email').value;
+             const product = document.getElementById('product').value;
+             const message = document.getElementById('message').value;
+ 
+             // Enviar el correo usando Email.js
+             emailjs.send("service_uuck0c2", "template_z8z5yuc", {
+                 name: name,
+                 phone: phone,
+                 email: email,
+                 product: product,
+                 message: message
+             })
+             .then(function(response) {
+                 console.log('SUCCESS!', response.status, response.text);
+                 alert('Mensaje enviado con éxito');
+                 document.getElementById('contact-form').reset(); // Resetear el formulario
+             }, function(error) {
+                 console.log('FAILED...', error);
+                 alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+             });
+         });
+     </script>
 </body>
 
 </html>

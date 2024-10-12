@@ -95,6 +95,10 @@
             </div>
         </section>
     </main>
+   <!-- Botón flotante de WhatsApp -->
+   <a href="https://wa.me/+50661083592" class="whatsapp-float" target="_blank">
+    <img src="src/Imagenes/whatsapp-removebg-preview.png" alt="WhatsApp" />
+</a>
 
     <!-- Footer -->
     <footer class="page-footer orange darken-3">
@@ -104,6 +108,29 @@
             </div>
         </div>
     </footer>
+
+    <style>
+        .whatsapp-float {
+      position: fixed;
+      bottom: 20px; /* Espacio desde la parte inferior */
+      right: 20px; /* Espacio desde el lado derecho */
+      width: 60px; /* Ancho del botón */
+      height: 60px; /* Altura del botón */
+      background-color: #ffff; /* Color de fondo de WhatsApp */
+      border-radius: 50%; /* Bordes redondeados */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+      display: flex; /* Alinear el contenido al centro */
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+      z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  }
+  
+  .whatsapp-float img {
+      width: 30px; /* Ancho del icono de WhatsApp */
+      height: 30px; /* Altura del icono de WhatsApp */
+  }
+  
+      </style>
 
     <!-- Incluir JavaScript de Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
